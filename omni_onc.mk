@@ -22,7 +22,9 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
+
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := onc

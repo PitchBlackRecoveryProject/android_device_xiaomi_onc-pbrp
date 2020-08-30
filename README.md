@@ -27,19 +27,19 @@ Works:
 ## Sync and Build manually
 ---------------
 
-To get started with building Team Win Recovery, you'll need to get
+To get started with building PitchBlack Recovery, you'll need to get
 familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
-To initialize your local repository using the minimal-manifest-twrp omni trees to build Team Win Recovery, use a command like this:
+To initialize your local repository using the minimal-manifest-twrp omni trees to build PitchBlack Recovery, use a command like this:
 
 ```bash
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-9.0
 repo sync -j$(nproc --all) --force-sync
 ```
 
 ## Add these projects to .repo/manifests/twrp-extras.xml
 ```xml
-<project path="onc-repo/android_recovery_xiaomi_onc" remote="github" revision="android-9.0" />
+<project path="TheSync/pbrp" remote="github" revision="android-9.0" />
 ```
 
 ## Then to build
