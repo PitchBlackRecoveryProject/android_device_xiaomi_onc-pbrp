@@ -11,9 +11,12 @@ jobs:
       CODENAME: 'onc'
       FLAVOR: 'eng'
       MAINTAINER: '@TheSync'
-      TEST_BUILD: 'true'
+      PB_OFFICIAL: 'true'
       CHANGELOG: |
-        Initial test build
+        - Bring up official release
+        - Fixed some minor bugs
+        - Disable patching DM-Verity by default (no need to tick again)
+        - Update prebuilt kernel and dtbo
     working_directory: /home/builder/pitchblack
     steps:
       - run:
