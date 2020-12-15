@@ -85,6 +85,11 @@ TARGET_COPY_OUT_VENDOR := vendor
 # SELinux
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy-minimal
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_onc
+TARGET_RECOVERY_DEVICE_MODULES := libinit_onc
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+
 # Recovery
 TW_THEME := portrait_hdpi
 BOARD_HAS_LARGE_FILESYSTEM := true

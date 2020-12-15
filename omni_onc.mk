@@ -48,3 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system_root/system/usr/share/zoneinfo/tzdata
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.model
