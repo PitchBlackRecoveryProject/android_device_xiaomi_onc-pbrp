@@ -35,11 +35,9 @@ PRODUCT_MODEL := Redmi 7/Y3
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="onc" \
-    BUILD_PRODUCT="onclite" \
-    PRIVATE_BUILD_DESC="onc-user 10 QKQ1.191008.001 V11.0.2.0.QFLCNXM release-keys"
+    PRIVATE_BUILD_DESC="onc-user 10 QKQ1.191008.001 V11.0.1.0.QFLMIXM release-keys"
 
-BUILD_FINGERPRINT := "xiaomi/onc/onc:10/QKQ1.191008.001/V11.0.2.0.QFLCNXM:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/onc/onc:10/QKQ1.191008.001/V11.0.1.0.QFLMIXM:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -50,3 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system_root/system/usr/share/zoneinfo/tzdata
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.model

@@ -1,38 +1,44 @@
 version: 2.1
+executors:
+  worker:
+    docker:
+      - image: fr3akyphantom/droid-builder:latest
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
 jobs:
   build:
-    docker:
-      # new all-in-one docker image
-      - image: fr3akyphantom/droid-builder:latest
+    executor: worker
     environment:
       MANIFEST_BRANCH: 'android-9.0'
-      VERSION: '3.0.0'
       VENDOR: 'xiaomi'
       CODENAME: 'onc'
       FLAVOR: 'eng'
-      MAINTAINER: '@TheSync'
       PB_OFFICIAL: 'true'
+      MAINTAINER: '@TheSync'
       CHANGELOG: |
-        - Bring up official release
-        - Fixed some minor bugs
-        - Disable patching DM-Verity by default (no need to tick again)
-        - Update prebuilt kernel and dtbo
+        - Switch fstab to minimal changes
+        - Unset AVB rollback index
+        - Update blobs from MIUI V11.0.1.0 QFLMIXM
+        - Drop FDE and switch to FBE only
+        - Update prebuilt kernel and dtbo image
+        - Fixes decryption problem in Android 11 ROMs
+        - Update init scripts from violet
+        - Show correct device name as per boot cert
+        - Add Chinese variants of Redmi 7 to list
     working_directory: /home/builder/pitchblack
     steps:
       - run:
           name: AIO Build
           command: |
-           
             wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/pb/build.sh
             source build.sh
-          
-            
 workflows:
-  version: 2
+  version: 2.1
   build_and_test:
     jobs:
       - build:
-          context: org-global
           filters:
             branches:
               only: 'android-9.0'
+          context: org-global

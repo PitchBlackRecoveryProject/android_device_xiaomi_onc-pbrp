@@ -53,3 +53,8 @@ repo sync -j$(nproc --all) --force-sync
 ```
 fastboot flash recovery out/target/product/onc/recovery.img
 ```
+
+## Kernel source
+```
+https://github.com/TheSync/android_kernel_xiaomi_onclite/tree/recovery
+```
