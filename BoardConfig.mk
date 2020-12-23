@@ -85,10 +85,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # SELinux
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy-minimal
 
-# Crypto
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-TARGET_HW_DISK_ENCRYPTION := true
-
 # Recovery
 TW_THEME := portrait_hdpi
 BOARD_HAS_LARGE_FILESYSTEM := true
